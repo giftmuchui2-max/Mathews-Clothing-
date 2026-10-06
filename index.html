@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mathews Clothing | Fashion & Style</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f7f7f7;
+    color: #111;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: #111;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #25d366;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.category:hover {
+    transform: translateY(-7px);
+}
+
+.category h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.category p {
+    color: #555;
+}
+
+/* SEARCH */
+
+.search-box {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 0 auto 40px;
+
+    padding: 16px 20px;
+
+    border: 2px solid #ddd;
+    border-radius: 12px;
+
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #111;
+}
+
+/* PRODUCTS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 28px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.sizes {
+    color: #111 !important;
+    font-weight: bold;
+}
+
+/* PRICE */
+
+.price {
+    font-size: 21px;
+    font-weight: bold;
+    color: #111 !important;
+    margin-top: 12px;
+}
+
+/* SIZE SELECT */
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+/* ORDER BUTTON */
+
+.order-btn {
+    display: block;
+    background: #25d366;
+    color: white;
+
+    text-align: center;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    transition: .3s;
+}
+
+.order-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.02);
+}
+
+/* ABOUT */
+
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        MATHEWS CLOTHING
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>MATHEWS CLOTHING</h1>
+
+        <p>
+            Style. Comfort. Confidence.
+        </p>
+
+        <a href="#shop" class="btn">
+            SHOP NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+    <h2 class="section-title">
+        Shop By Category
+    </h2>
+
+    <p class="section-text">
+        Find something that matches your style.
+    </p>
+
+
+    <div class="categories">
+
+        <div class="category">
+            <h3>👕 T-Shirts</h3>
+            <p>KSh 800 – 2,000</p>
+        </div>
+
+        <div class="category">
+            <h3>🧥 Hoodies</h3>
+            <p>KSh 800 – 2,500</p>
+        </div>
+
+        <div class="category">
+            <h3>👔 Shirts</h3>
+            <p>KSh 900 – 2,000</p>
+        </div>
+
+        <div class="category">
+            <h3>👟 Shoes</h3>
+            <p>KSh 2,000 – 10,000</p>
+        </div>
+
+        <div class="category">
+            <h3>👖 Trousers</h3>
+            <p>KSh 800 – 4,000</p>
+        </div>
+
+        <div class="category">
+            <h3>🩳 Shorts</h3>
+            <p>KSh 800 – 3,000</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section id="shop">
+
+    <h2 class="section-title">
+        Our Collection
+    </h2>
+
+    <p class="section-text">
+        Choose your item, select your size and order directly through WhatsApp.
+    </p>
+
+
+    <!-- SEARCH -->
+
+    <input
+        type="text"
+        id="searchInput"
+        class="search-box"
+        placeholder="🔎 Search T-Shirts, Hoodies, Shoes..."
+        onkeyup="searchProducts()"
+    >
+
+
+    <div class="products">
+
+
+        <!-- T-SHIRTS -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+            alt="T-Shirts">
+
+            <div class="product-info">
+
+                <h3>T-Shirts</h3>
+
+                <p>
+                    Stylish and comfortable T-Shirts
+                    for everyday wear.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: S, M, L, XL, XXL
+                </p>
+
+                <p class="price">
+                    KSh 800 – 2,000
+                </p>
+
+                <select id="tshirtSize">
+
+                    <option value="S">Size S</option>
+                    <option value="M">Size M</option>
+                    <option value="L">Size L</option>
+                    <option value="XL">Size XL</option>
+                    <option value="XXL">Size XXL</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('T-Shirt','tshirtSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOODIES -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80"
+            alt="Hoodies">
+
+            <div class="product-info">
+
+                <h3>Hoodies</h3>
+
+                <p>
+                    Warm, comfortable and stylish
+                    hoodies for everyday wear.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: M, L, XL, XXL
+                </p>
+
+                <p class="price">
+                    KSh 800 – 2,500
+                </p>
+
+                <select id="hoodieSize">
+
+                    <option value="M">Size M</option>
+                    <option value="L">Size L</option>
+                    <option value="XL">Size XL</option>
+                    <option value="XXL">Size XXL</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('Hoodie','hoodieSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHIRTS -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80"
+            alt="Shirts">
+
+            <div class="product-info">
+
+                <h3>Shirts</h3>
+
+                <p>
+                    Smart and casual shirts
+                    for different occasions.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: S, M, L, XL
+                </p>
+
+                <p class="price">
+                    KSh 900 – 2,000
+                </p>
+
+                <select id="shirtSize">
+
+                    <option value="S">Size S</option>
+                    <option value="M">Size M</option>
+                    <option value="L">Size L</option>
+                    <option value="XL">Size XL</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('Shirt','shirtSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOES -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+            alt="Shoes">
+
+            <div class="product-info">
+
+                <h3>Shoes</h3>
+
+                <p>
+                    Trendy footwear for your
+                    everyday style.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: 39 – 45
+                </p>
+
+                <p class="price">
+                    KSh 2,000 – 10,000
+                </p>
+
+                <select id="shoeSize">
+
+                    <option value="39">Size 39</option>
+                    <option value="40">Size 40</option>
+                    <option value="41">Size 41</option>
+                    <option value="42">Size 42</option>
+                    <option value="43">Size 43</option>
+                    <option value="44">Size 44</option>
+                    <option value="45">Size 45</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('Shoes','shoeSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TROUSERS -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80"
+            alt="Trousers">
+
+            <div class="product-info">
+
+                <h3>Trousers</h3>
+
+                <p>
+                    Comfortable trousers with
+                    a clean modern look.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: 28 – 40
+                </p>
+
+                <p class="price">
+                    KSh 800 – 4,000
+                </p>
+
+                <select id="trouserSize">
+
+                    <option value="28">Size 28</option>
+                    <option value="30">Size 30</option>
+                    <option value="32">Size 32</option>
+                    <option value="34">Size 34</option>
+                    <option value="36">Size 36</option>
+                    <option value="38">Size 38</option>
+                    <option value="40">Size 40</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('Trousers','trouserSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHORTS -->
+
+        <div class="product-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1617952236317-0bd127407984?auto=format&fit=crop&w=800&q=80"
+            alt="Shorts">
+
+            <div class="product-info">
+
+                <h3>Shorts</h3>
+
+                <p>
+                    Comfortable shorts for
+                    a relaxed everyday look.
+                </p>
+
+                <p class="sizes">
+                    Available sizes: 28 – 40
+                </p>
+
+                <p class="price">
+                    KSh 800 – 3,000
+                </p>
+
+                <select id="shortSize">
+
+                    <option value="28">Size 28</option>
+                    <option value="30">Size 30</option>
+                    <option value="32">Size 32</option>
+                    <option value="34">Size 34</option>
+                    <option value="36">Size 36</option>
+                    <option value="38">Size 38</option>
+                    <option value="40">Size 40</option>
+
+                </select>
+
+                <a
+                href="#"
+                class="order-btn"
+                onclick="orderProduct('Shorts','shortSize')">
+
+                    Order on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About Mathews Clothing
+    </h2>
+
+    <p>
+
+        Mathews Clothing is all about bringing
+        stylish, comfortable and affordable fashion
+        to everyone.
+
+        We believe looking good should not have
+        to cost a fortune.
+
+    </p>
+
+    <a
+    href="https://wa.me/254713366824?text=Hello%20Mathews%20Clothing%2C%20I%20would%20like%20to%20know%20more."
+    target="_blank"
+    class="btn">
+
+        Talk To Us
+
+    </a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p>
+        📱 WhatsApp: 0713366824
+    </p>
+
+    <p>
+        📧 Email: mathewmwenda878@gmail.com
+    </p>
+
+    <br>
+
+    <a
+    href="https://wa.me/254713366824"
+    target="_blank"
+    class="btn">
+
+        WhatsApp Us
+
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Mathews Clothing
+    </p>
+
+    <p>
+        Style. Comfort. Confidence.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* SEARCH */
+
+function searchProducts() {
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+
+        const text =
+            product.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* WHATSAPP ORDER */
+
+function orderProduct(product, sizeId) {
+
+    const size =
+        document.getElementById(sizeId).value;
+
+    const message =
+        "Hello Mathews Clothing! 👋%0A%0A" +
+        "I would like to order:%0A" +
+        "Product: " + product + "%0A" +
+        "Size: " + size + "%0A%0A" +
+        "Please let me know if it is available.";
+
+    const whatsapp =
+        "https://wa.me/254713366824?text=" + message;
+
+    window.open(whatsapp, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
